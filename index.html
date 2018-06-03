@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+
+    <title>Train Scheduler</title>
+</head>
+
+<body>
+
+    <div class="container text-center" id="head-container">
+        <div class="jumbotron" id="head">
+            <h1>
+                <img src="images/UCITA.png" height="50" width="50"> UCITA
+                <img src="images/UCITA.png" height="50" width="50">
+            </h1>
+            <h3>UCI Transportation Authority</h3>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading panel-custom">
+            Add Train
+        </div>
+        <div class="panel-body">
+            <form>
+                <div class="form-group">
+                    <label for="trainName">Train Name:</label>
+                    <input type="text" class="form-control" id="train-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destination:</label>
+                    <input type="text" class="form-control" id="train-destination" required>
+                </div>
+                <div class="form-group">
+                    <label for="startYear">First Train Time: (military time) </label>
+                    <input type="text" class="form-control" placeholder="HH:MM" id="train-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="endYear">Frequency (minutes)</label>
+                    <input type="text" class="form-control" id="time-freq">
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" id="btn-add" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-search"></span> Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="panel panel-default" id="panel-table">
+            <div class="panel-heading panel-custom">
+                Current Train Schedule
+            </div>
+            <table class="table table-hover">
+                <tr>
+                    <th>Train Name</th>
+                    <th>Destination</th>
+                    <th>Frequency (min)</th>
+                    <th>Next Arrival</th>
+                    <th>Minutes Away</th>
+                </tr>
+                <tbody id="table-data"></tbody>
+            </table>
+            <hr />
+        </div>
+
+    </div>
+
+    <script src="assets/javascript/app.js"></script>
+</body>
+
+</html>

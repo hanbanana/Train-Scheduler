@@ -1,0 +1,20 @@
+.panel {
+    margin-left: 210px;
+    margin-right: 210px;
+}
+
+.panel-heading {
+    background-color:darkblue;
+    color: white;
+}
+
+#head {
+    background:darkblue;
+    color: white;
+}
+
+#panel-table {
+    margin-left: 10px;
+    margin-right: 10px; 
+    margin-top: 30px;
+}
