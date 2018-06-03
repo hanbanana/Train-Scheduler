@@ -13,7 +13,7 @@
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+
 
     <title>Train Scheduler</title>
 </head>
@@ -27,12 +27,13 @@
                 <img src="images/UCITA.png" height="50" width="50">
             </h1>
             <h3>UCI Transportation Authority</h3>
+            <h5>Today is <span id="current-time"></span></h5>
         </div>
     </div>
 
     <div class="panel panel-default">
         <div class="panel-heading panel-custom">
-            Add Train
+           <strong>Add Train</strong>
         </div>
         <div class="panel-body">
             <form>
@@ -45,16 +46,15 @@
                     <input type="text" class="form-control" id="train-destination" required>
                 </div>
                 <div class="form-group">
-                    <label for="startYear">First Train Time: (military time) </label>
-                    <input type="text" class="form-control" placeholder="HH:MM" id="train-time" required>
+                    <label for="start">First Train Time: (military time) </label>
+                    <input type="time" class="form-control" placeholder="hh:mm" id="train-time" required>
                 </div>
                 <div class="form-group">
-                    <label for="endYear">Frequency (minutes)</label>
+                    <label for="end">Frequency (minutes)</label>
                     <input type="text" class="form-control" id="time-freq">
                 </div>
                 <div class="btn-group" role="group">
-                    <button type="button" id="btn-add" class="btn btn-primary">
-                        <span class="glyphicon glyphicon-search"></span> Submit</button>
+                    <button type="button" id="btn-add" class="btn btn-primary">Submit</button>
                 </div>
             </form>
         </div>
@@ -63,7 +63,7 @@
     <div class="container">
         <div class="panel panel-default" id="panel-table">
             <div class="panel-heading panel-custom">
-                Current Train Schedule
+                <strong>Current Train Schedule</strong>
             </div>
             <table class="table table-hover">
                 <tr>
@@ -74,8 +74,7 @@
                     <th>Minutes Away</th>
                 </tr>
                 <tbody id="table-data"></tbody>
-            </table>
-            <hr />
+            </table>            
         </div>
 
     </div>
